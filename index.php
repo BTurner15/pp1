@@ -15,9 +15,17 @@
         Add a function called largest() that takes an array as a parameter and 
         returns the largest value in the array. 
         Test the function from your index page.  
+        
     4.	In your include file, define a function called average() that takes an 
-        array as a parameter and returns the average of the values in the function. 
-        Test the function from your index page.        
+        array as a parameter and returns the average of the values in the 
+        function. 
+        Test the function from your index page. 
+        
+    5.	In your include file, define a function called removeDups() that takes 
+        an array as a parameter and returns an array with duplicates removed. 
+        So, given the $numbers array, removeDups() would return [7, 9, 8, 6]. 
+        (Order doesn’t matter.) Test the function from your index page.    
+        
 -->
 <!-- -->
 <html lang="en">
@@ -39,13 +47,30 @@ include("includes/functions.php");
 set_error_handler('my_error_handler');
 // start of the specific code
 // 2.	Define an array called $numbers, which contains 7, 9, 8, 9, 8, 8, 6. 
-$numbers = array(7,9,8,9,8,8,6);
+
+$numbers = array(0=>7,1=>9,2=>8,3=>9,4=>8,5=>8,6=>6);
+
+$originalCount = count($numbers);
 //      Print the array using your function.   
 printArr($numbers);
 $biggest = largest($numbers);
 echo "<br> Largest Value in array: $biggest";
 $result = average($numbers);
 echo "<br> Average of all Values in array: $result";
+
+$numbersNoDuplicates = removeDups($numbers);
+//be cognizant that the number of non-null elements differs is a duplicate
+//was found
+echo "<br> array with duplicate Values removed follows <br>";
+var_dump($numbersNoDuplicates);
+/*
+$numElNew = count($numbersNoDuplicates);
+    for ($i = 0; $i < $originalCount; $i++) {
+        if($numbersNoDuplicates[$i] !== null)echo "$numbersNoDuplicates[$i] <br>";
+    } 
+
+//printArr($numbersNoDuplicates);
+*/
 ?>
 
 </body>
