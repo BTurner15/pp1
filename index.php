@@ -1,7 +1,7 @@
 <!doctype html>
 <!-- Bruce Turner, IT 328, W2019 -->
 <!-- https://bturner.greenriverdev.com/328/index.php -->
-<!-- 01-09-19 Rev1.0 -->
+<!-- 01-11-19 Rev6.0 -->
 <!-- Pair Programming #1 -->
 <!-- 1.	Create an index.php file in your pp1 directory and give it a title 
         and header “Pair Program 1.” 
@@ -26,6 +26,16 @@
         So, given the $numbers array, removeDups() would return [7, 9, 8, 6]. 
         (Order doesn’t matter.) Test the function from your index page.    
         
+    6.	In your include file, define a function called distribution() that takes 
+        an array as a parameter and returns an associative array with each value 
+        from the original array, and the number of times that value occurs in the 
+        original array. The keys should be sorted. 
+
+        So, given the $numbers array:  [7, 9, 8, 9, 8, 8, 6]
+        distribution() would return [6=>1, 7=>1, 8=>3, 9=>2]
+
+        Test the function from your index page.
+    
 -->
 <!-- -->
 <html lang="en">
@@ -70,6 +80,14 @@ $numElNew = count($numbersNoDuplicates);
     } 
 
 //printArr($numbersNoDuplicates);
+*/
+echo "<br> associative array with occurances follows <br>";
+$foo = distribution($numbers);
+print_r($foo);
+/*
+foreach($foo as $key => $val){
+    echo "$key = $val\n";
+}
 */
 ?>
 
